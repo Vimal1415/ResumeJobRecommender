@@ -1,21 +1,21 @@
-# 🧠 Automated Job Recommendation System (Serverless on AWS)
+# Automated Job Recommendation System (Serverless on AWS)
 
 A **fully serverless backend system** that parses resumes, extracts candidate skills, and automatically generates **top 5 personalized job recommendations** in real-time.  
 Built using **AWS Lambda, S3, DynamoDB, and Python**, this system is designed for scalability and automation — no manual intervention required.
 
 ---
 
-## 🚀 Features
-- 📂 **Resume Upload Pipeline**: Upload resumes to S3 and trigger an automated workflow.
-- 🔍 **Resume Text Extraction**: Extract raw text from uploaded PDF or DOCX files using AWS Lambda.
-- 📝 **Resume Parsing**: Parse candidate details (name, email, phone, skills, education, projects, seniority estimate) and save structured data to DynamoDB.
-- 🤖 **Job Recommendation Engine**: Match candidate skills with job listings and store top 5 recommendations in DynamoDB.
-- 🔗 **Lambda-to-Lambda Automation**: Serverless orchestration of multiple Lambda functions for full automation.
-- ☁️ **AWS-Native Architecture**: Scalable, event-driven design using S3 triggers, Lambda, and DynamoDB.
+## Features
+- **Resume Upload Pipeline**: Upload resumes to S3 and trigger an automated workflow.
+- **Resume Text Extraction**: Extract raw text from uploaded PDF or DOCX files using AWS Lambda.
+- **Resume Parsing**: Parse candidate details (name, email, phone, skills, education, projects, seniority estimate) and save structured data to DynamoDB.
+- **Job Recommendation Engine**: Match candidate skills with job listings and store top 5 recommendations in DynamoDB.
+- **Lambda-to-Lambda Automation**: Serverless orchestration of multiple Lambda functions for full automation.
+- **AWS-Native Architecture**: Scalable, event-driven design using S3 triggers, Lambda, and DynamoDB.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 | Component            | Technology Used                        |
 |----------------------|---------------------------------------|
 | **Language**         | Python 3.11                           |
@@ -27,7 +27,7 @@ Built using **AWS Lambda, S3, DynamoDB, and Python**, this system is designed fo
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 ```bash
 automated-job-recommendation/
 │
