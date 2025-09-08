@@ -1,28 +1,50 @@
-# Automated Resume Job Recommendation System
+# 🧠 Automated Job Recommendation System (Serverless on AWS)
 
-A serverless AWS-powered project that extracts resume data, parses job listings, and provides **automated job recommendations** based on resume content.  
-Built entirely on AWS Lambda, DynamoDB, and S3, this backend system demonstrates cloud-native architecture for intelligent automation.
-
----
-
-## Features
-- 🔹 Upload resumes via API – automatically stored in **Amazon S3**
-- 🔹 Text extraction from PDFs using **AWS Lambda**
-- 🔹 Resume parsing and structured storage in **DynamoDB**
-- 🔹 Automated job recommendations using **JobRecommenderLambda**
-- 🔹 Recommendations saved in a separate **JobRecommendations** table
-- 🔹 Fully serverless – scales with AWS Lambda
+A **fully serverless backend system** that parses resumes, extracts candidate skills, and automatically generates **top 5 personalized job recommendations** in real-time.  
+Built using **AWS Lambda, S3, DynamoDB, and Python**, this system is designed for scalability and automation — no manual intervention required.
 
 ---
 
-## Tech Stack
-- **Backend:** AWS Lambda (Python 3.11)
-- **Database:** Amazon DynamoDB
-- **Storage:** Amazon S3
-- **Orchestration:** Lambda-to-Lambda invocation
-- **Infrastructure:** IAM Roles & Policies
-- **Language:** Python
+## 🚀 Features
+- 📂 **Resume Upload Pipeline**: Upload resumes to S3 and trigger an automated workflow.
+- 🔍 **Resume Text Extraction**: Extract raw text from uploaded PDF or DOCX files using AWS Lambda.
+- 📝 **Resume Parsing**: Parse candidate details (name, email, phone, skills, education, projects, seniority estimate) and save structured data to DynamoDB.
+- 🤖 **Job Recommendation Engine**: Match candidate skills with job listings and store top 5 recommendations in DynamoDB.
+- 🔗 **Lambda-to-Lambda Automation**: Serverless orchestration of multiple Lambda functions for full automation.
+- ☁️ **AWS-Native Architecture**: Scalable, event-driven design using S3 triggers, Lambda, and DynamoDB.
 
 ---
 
-## 📂 Project Structure
+## 🛠️ Tech Stack
+| Component            | Technology Used                        |
+|----------------------|---------------------------------------|
+| **Language**         | Python 3.11                           |
+| **Cloud Platform**   | AWS                                   |
+| **Compute**          | AWS Lambda                           |
+| **Storage**          | Amazon S3, Amazon DynamoDB           |
+| **Orchestration**    | Lambda-to-Lambda Invocation          |
+| **Data Processing**  | Regex, NLP-based skill extraction     |
+
+---
+
+## 📦 Project Structure
+```bash
+automated-job-recommendation/
+│
+├── lambdas/
+│   ├── resume-upload-function/        # Handles resume uploads and stores them in S3
+│   │   └── lambda_function.py
+│   ├── resume-extract-function/       # Extracts text from resumes
+│   │   └── lambda_function.py
+│   ├── ResumeParserFunction/          # Parses resume and stores data in DynamoDB
+│   │   └── lambda_function.py
+│   └── JobRecommenderLambda/          # Generates job recommendations
+│       └── lambda_function.py
+│
+├── dynamodb-tables/
+│   ├── ResumeData.json                # Sample ResumeData table schema
+│   ├── JobListings.json               # Sample JobListings table schema
+│   └── JobRecommendations.json        # Sample JobRecommendations schema
+│
+├── requirements.txt                   # Python dependencies
+└── README.md                          # Project documentation
